@@ -1,0 +1,124 @@
+.login{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background-color: rgb(0, 102, 192);
+}
+
+.left-side{
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(#8fe00d4d, #04f8c74b), 
+    url(../assets/bg.png)
+    center no-repeat;
+    background-size: cover;
+    border-radius: 1rem 0 0 1rem;
+    position: relative;
+
+}
+
+.right-side{
+    height: 100%;
+    width: 50%;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.right-side h1{
+    font-family: "Comfortaa", sans-serif;
+    font-size: clamp(2rem, 4cqi, 5rem);
+    text-transform: uppercase;
+    background: linear-gradient(to right, #8FE00D, #04F8C7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 10rem;
+}
+
+.right-side form{
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Email, 
+.Senha{
+    width: clamp(15rem, 25cqi, 45rem);
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem solid #04F8C7;
+    color: #ddd;
+    padding: 0.5rem 0;
+    margin-bottom: 5rem;
+}
+
+
+.Email::placeholder,
+.Senha::placeholder{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.3rem;
+    color: #04F8C7;
+    opacity: 0.5;
+}
+
+.Botao{
+    width: clamp(15rem, 25cqi, 45rem);
+    background: linear-gradient(to right, #8FE00D, #04F8C7);
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    color: #ddd;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.Botao:active{
+    transform: translateY(0.2rem);
+}
+.footer-form{
+    margin-top: 2rem;
+    display: flex;
+    position: relative;
+    align-items:flex-end;
+}
+
+.CriarConta{
+    top: 3rem;
+    background: transparent;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 100;
+    border: none;
+    color: #ddd;
+    cursor: pointer;
+}
+
+
+
+/* 
+.form-box{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+
+.form {
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: transparent ;
+    border-radius: 1rem;
+    padding: 5rem;
+    row-gap: 0.5rem;
+} */ 
