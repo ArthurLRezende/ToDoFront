@@ -1,0 +1,93 @@
+.Cadastro{
+    height: 100%;
+    width: 100%;
+    background-color: aliceblue;
+    display: flex;
+}
+
+
+.side-right{
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(#04f8c74b , #8fe00d4d), 
+    url(../assets/bgCadastro.png)
+    center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.side-left {
+    height: 100%;
+    width: 50%;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.side-left h1{
+    font-family: "Comfortaa", sans-serif;
+    font-size: clamp(2rem, 4cqi, 5rem);
+    text-transform: uppercase;
+    background: linear-gradient(to right, #04F8C7,  #8FE00D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 10rem;
+}
+
+
+.side-left form{
+
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+}
+.NomeCadastro,
+.EmailCadastro, 
+.SenhaCadastro{
+    width: clamp(15rem, 25cqi, 45rem);
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem solid #8FE00D;
+    color: #ddd;
+    padding: 0.5rem 0;
+    margin-bottom: 5rem;
+}
+
+.NomeCadastro::placeholder,
+.EmailCadastro::placeholder,
+.SenhaCadastro::placeholder{
+    font-family: "Comfortaa", sans-serif;
+    font-size: 1.3rem;
+    color: #8FE00D;
+    opacity: 0.5;
+}
+
+.NomeCadastro:focus::placeholder,
+.EmailCadastro:focus::placeholder,
+.SenhaCadastro:focus::placeholder{
+    color: transparent;
+}
+
+.BotaoCadastro{
+    width: clamp(15rem, 25cqi, 45rem);
+    background: linear-gradient(to right, #04F8C7,  #8FE00D);
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    color: #ddd;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.BotaoCadastro:active{
+    transform: translateY(0.2rem);
+}
