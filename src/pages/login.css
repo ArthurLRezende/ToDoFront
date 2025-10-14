@@ -61,7 +61,7 @@
 .Email::placeholder,
 .Senha::placeholder{
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #04F8C7;
     opacity: 0.5;
 }

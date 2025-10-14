@@ -61,16 +61,11 @@
 .EmailCadastro::placeholder,
 .SenhaCadastro::placeholder{
     font-family: "Comfortaa", sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #8FE00D;
     opacity: 0.5;
 }
 
-.NomeCadastro:focus::placeholder,
-.EmailCadastro:focus::placeholder,
-.SenhaCadastro:focus::placeholder{
-    color: transparent;
-}
 
 .BotaoCadastro{
     width: clamp(15rem, 25cqi, 45rem);

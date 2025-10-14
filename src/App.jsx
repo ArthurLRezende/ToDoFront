@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Login from './pages/login'
 import Cadastro from './pages/cadastro'
+import ToDo from './pages/ToDo'
 import './index.css'
 
 function App() {
@@ -9,8 +10,10 @@ function App() {
   return (
     <>
     <div className="container">
-        {/* <Login /> */}
-        <Cadastro />
+        <Login />
+        {/* <Cadastro /> */}
+        {/* <ToDo /> */}
+
     </div>
 {/*     
       <div>

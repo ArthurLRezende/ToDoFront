@@ -2,6 +2,7 @@
 import {useState, useEffect} from 'react'
 import image from '../assets/image.png'
 import './login.css'
+import ToDo from './ToDo'
 
 const Login = () => {
 
@@ -24,7 +25,7 @@ const Login = () => {
                     <form action="">
                         <input type="text" className='Email' placeholder='Email' />
                         <input type="password" className='Senha' placeholder='Senha' />
-                        <button className='Botao' onClick={() => {}}>LogIn</button>
+                        <button className='Botao' onClick={() => {<ToDo/>}}>LogIn</button>
                         <div className="footer-form">
                             <button className='CriarConta' onClick={() => {}}>Crie sua conta</button>
                         </div>

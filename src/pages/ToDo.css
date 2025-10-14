@@ -1,0 +1,69 @@
+.ToDo{
+    height: 100%;
+    width: 100%;
+    background-color: #424242;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.titulo{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1rem;
+}
+
+.logout{
+    position: absolute;
+    justify-content: end;
+    right: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    font-weight: 100;
+    color: #ddd;
+    display: flex;
+    align-items: center;
+}
+
+.superior{
+    background-color: transparent;
+    border: 0.1rem solid blue;
+    height: 35%;
+    width: 100%;
+    display: flex;
+}
+
+.superior-cadastro{
+    height: 100%;
+    width: 60%;
+    border: 0.1rem solid yellowgreen;
+}
+
+.superior-insight{
+    height: 100%;
+    width: 50%;
+    border: 0.1rem solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inferior{
+    background-color: rgb(51, 7, 211);
+    height: 65%;
+    width: 100%;
+}
