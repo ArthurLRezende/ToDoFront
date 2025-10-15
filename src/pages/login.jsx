@@ -1,18 +1,28 @@
 
 import {useState, useEffect} from 'react'
+import { useNavigate } from "react-router-dom";
 import image from '../assets/image.png'
 import './login.css'
 import ToDo from './ToDo'
+import { logar } from '../helpers/data';
 
 const Login = () => {
+    
+  const navigate = useNavigate();
 
-    const callapi = async (Email, Senha) => {
-    var resultado = await axios.post("https://localhost:17154/auth/login",{
-    Email: 'jakrh@hotmail.com',
-    Senha: '1934'
-    })
+  const handleSubmit = async (e) => {
+    e.preventDefault() // Evita recarregar a página
 
-    console.log(resultado)
+    const email = e.target.Email.value
+    const senha = e.target.Senha.value
+
+    const sucesso = await logar(email, senha)
+
+    if (sucesso) {
+      navigate("/ToDo") // Redireciona para a página protegida
+    } else {
+      alert("Email ou senha inválidos!")
+    }
   }
 
     return(
@@ -22,12 +32,13 @@ const Login = () => {
                 </div>
                 <div className="right-side">
                     <h1>Faça seu Login</h1>
-                    <form action="">
-                        <input type="text" className='Email' placeholder='Email' />
-                        <input type="password" className='Senha' placeholder='Senha' />
-                        <button className='Botao' onClick={() => {<ToDo/>}}>LogIn</button>
+                    <form onSubmit={handleSubmit}>
+                        <input type="text" name="Email" className='Email' placeholder='Email' />
+                        <input type="password" name="Senha" className='Senha' placeholder='Senha' />
+                        <button className='Botao' type='submit'>LogIn</button>
                         <div className="footer-form">
-                            <button className='CriarConta' onClick={() => {}}>Crie sua conta</button>
+                            <a className='CriarConta' onClick={() =>
+                                 navigate('/cadastro')}>Crie sua conta</a>
                         </div>
                     </form>
                 </div>
