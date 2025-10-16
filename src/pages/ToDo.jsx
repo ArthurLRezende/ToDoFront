@@ -3,6 +3,7 @@ import './ToDo.css'
 import { useNavigate } from 'react-router-dom';
 import { pegartarefas } from '../helpers/data';
 import CadastroTarefa from './components/cadastrarTarefa';
+import Insight from './components/insightgpt';
 
 const ToDo = () => {
     
@@ -30,7 +31,7 @@ const ToDo = () => {
                         <CadastroTarefa />
                     </div>
                     <div className="superior-insight">
-                        parte de insight do gpt
+                        <Insight />
                     </div>
                 </div>
                 <div className="inferior">
