@@ -1,6 +1,51 @@
-.insight-box{
-    border: 1rem solid #07f857;
+.insight {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.insight-box {
+    height: 100%;
+    width: 100%;
     background-color: transparent;
-    padding: 5rem;
+    padding: 2rem;
     border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.insight-text {
+    padding: 1rem;
+    width: 100%;
+    max-height: 40rem; 
+    overflow-y: auto; 
+    background: transparent;
+    border: none;
+    border-bottom: 0.1rem solid #04F8C7;
+    color: #ddd;
+    font-size: 1.5rem;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+
+.insight-text::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
+}
+
+.insightBotao {
+    width: clamp(15rem, 25cqi, 45rem);
+    background: linear-gradient(to right, #8FE00D, #04F8C7);
+    padding: 1rem;
+    border: none;
+    border-radius: 1rem;
+    color: #ddd;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 0 5rem 1rem rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin-top: 2rem;
 }

@@ -24,6 +24,7 @@ const CadastroTarefa = () => {
             <input type="text" name="Titulo" className='TituloTarefa' placeholder='Insira o nome da tarefa' />
             <input type="text" name="Status" className='StatusTarefa' placeholder='Insira o status da tarefa' />
             <select name="Urgencia" className='UrgenciaTarefa'>
+                <option value="" disabled selected>Nível de Urgencia</option>
                 <option value="Alta" >Alta</option>
                 <option value="Media" >Media</option>
                 <option value="Baixa" >Baixa</option>
