@@ -97,7 +97,7 @@
 }
 
 .inferior-lista-tarefas::-webkit-scrollbar {
-    display: none; /* Chrome, Edge, Safari */
+    display: none; 
 }
 
 .inferior-graficos {

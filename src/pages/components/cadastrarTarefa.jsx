@@ -6,8 +6,6 @@ import { cadastrarTarefa } from '../../helpers/data';
 
 const CadastroTarefa = ({ refresh }) => {
 
-    const [selectedDate, setSelectedDate] = useState(null);
-
     const handleCadastroTarefa = async (e) => {
         e.preventDefault()
         const Titulo = e.target.Titulo.value

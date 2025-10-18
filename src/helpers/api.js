@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://localhost:17154",//API .NET
+  baseURL: "https://localhost:17154",//minha API .NET
 });
 
 api.interceptors.request.use((config) => {
