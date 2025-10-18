@@ -2,12 +2,13 @@ import { useState, useEffect } from 'react'
 import './cadastrarTarefa.css'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { cadastrarTarefa } from '../../helpers/data';
 
-const CadastroTarefa = () => {
-  
+const CadastroTarefa = ({ refresh }) => {
+
     const [selectedDate, setSelectedDate] = useState(null);
 
-    const handleCadastroTarefa = (e) => {
+    const handleCadastroTarefa = async (e) => {
         e.preventDefault()
         const Titulo = e.target.Titulo.value
         const Descricao = e.target.Descricao.value
@@ -15,8 +16,14 @@ const CadastroTarefa = () => {
         const Urgencia = e.target.Urgencia.value
         const Data = e.target.data.value
 
-        console.log(Titulo, Descricao, Status, Urgencia, Data)
+        const response = await cadastrarTarefa(Titulo, Descricao, Status, Urgencia, Data)
 
+        if (response) {
+            refresh()
+            e.target.reset()
+        } else {
+            alert("Erro ao cadastrar uma nova tarefa")
+        }
     }
 
     return (
@@ -36,7 +43,7 @@ const CadastroTarefa = () => {
                 className='custom-date-input'
             // value={selectedDate}
             // onChange={handleChange}
-            /> 
+            />
             <textarea name="Descricao" id="" className='DescricaoTarefa' placeholder='Insira a Descricao da tarefa'></textarea>
             <button className="cadastra-tarefa" type='submit'>Cadastrar a tarefa</button>
         </form>

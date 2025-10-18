@@ -1,0 +1,14 @@
+.footer{
+    height: clamp(5vh, 10cqi, 15vh);
+    width: 100%;
+    background-color: rgb(31, 31, 31);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.mensagem{
+    color: aliceblue;
+    font-size: 1.6rem;
+}

@@ -1,0 +1,201 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background-color: #2f2f2f;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 80%;
+    max-width: 700px;
+    height: 80%;
+    overflow-y: auto;
+    color: #ddd;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+.modal-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ddd;
+    text-align: center;
+    border-bottom: 0.1rem solid #04F8C7;
+    padding-bottom: 2%;
+}
+
+.modal-section-descricao {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+    height: 30%;
+    background-color: transparent;
+}
+
+.modal-section-descricao label{
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+.modal-section-status {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+}
+
+.modal-section-status label{
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+.modal-section-urgencia {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+}
+
+.modal-section-data{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5%;
+    width: 100%;
+    height: 15%;
+    background-color: transparent;
+    
+}
+
+.modal-section-data p{
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+.modal-section-urgencia label {
+    font-size: 1.3rem;
+    color: #ddd;
+}
+
+.modal-input-descricao{
+    width: 100%;
+    padding: 2%;
+    height: 80%;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #04F8C7;
+    background-color: transparent;
+    color: #ddd;
+    resize: vertical;
+}
+
+.modal-input-data{
+    width: 100%;
+    padding: 2%;
+    height: 80%;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #04F8C7;
+    background-color: transparent;
+    color: #ddd;
+    resize: vertical;
+}
+
+.modal-input-status{
+    width: 100%;
+    padding: 2%;
+    height: 45%;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #04F8C7;
+    background-color: transparent;
+    color: #ddd;
+    resize: vertical;
+}
+
+
+.modal-input-descricao::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-input-status::-webkit-scrollbar{
+    display: none;
+}
+
+.modal-input-urgencia{
+    width: 100%;
+    padding: 2%;
+    border-radius: 0.5rem;
+    border: 0.1rem solid #04F8C7;
+    background-color: #3a3a3a;
+    color: #eee;
+    resize: vertical;
+}
+
+.modal-info {
+    font-size: 90%;
+    margin-top: 1%;
+    text-align: left;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.btn {
+    flex: 1;
+    margin: 1%;
+    padding: 2%;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 100%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:active{
+    transform: translateY(0.2rem);
+}
+
+.btn.delete {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+.btn.complete {
+    background-color: #8FE00D;
+    color: #1b1b1b;
+}
+
+.btn.update {
+    background-color: #04F8C7;
+    color: #1b1b1b;
+}
+
+
+.close-button {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    font-size: 150%;
+    color: #04F8C7;
+    cursor: pointer;
+}

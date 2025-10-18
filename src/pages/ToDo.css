@@ -78,7 +78,7 @@
 
 .inferior {
     background-color: transparent;
-    height: 65%;
+    height: 50%; 
     width: 100%;
     display: flex;
     align-items: center;
@@ -93,6 +93,11 @@
     border: 0.3rem solid #8FE00D;
     border-radius: 1rem;
     margin: 0 1rem 0 2rem;
+    overflow-y: auto; 
+}
+
+.inferior-lista-tarefas::-webkit-scrollbar {
+    display: none; /* Chrome, Edge, Safari */
 }
 
 .inferior-graficos {

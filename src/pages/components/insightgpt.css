@@ -31,7 +31,7 @@
 
 
 .insight-text::-webkit-scrollbar {
-    display: none; /* Chrome, Edge, Safari */
+    display: none; 
 }
 
 .insightBotao {
