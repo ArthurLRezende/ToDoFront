@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://localhost:17154",//minha API .NET
+  baseURL: "https://todoportifolio-api-g7dubadahzb9daeb.brazilsouth-01.azurewebsites.net/",//minha API .NET
 });
 
 api.interceptors.request.use((config) => {
