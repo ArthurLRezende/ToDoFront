@@ -16,7 +16,7 @@ const TailwindGPT = () => {
         <div className="h-full w-full flex items-center p-4 border-b border-amber-50 max-h-72">
             {showMessage ? (
                 <div className="w-full h-full overflow-y-auto no-scrollbar min-h-0  wrap-break-word">
-                    <p className="text-gray-100 font-kanit ">
+                    <p className="text-gray-100 font-kanit text-justify">
                         {message}
                     </p>
                 </div>
