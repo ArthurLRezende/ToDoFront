@@ -4,14 +4,18 @@ import Login from './pages/login'
 import Cadastro from './pages/cadastro'
 import ToDo from './pages/ToDo'
 import ProtectedRoute from './routes/ProtectedRoute'
-import './index.css'
+import Home from './pages/tailwindcsshome'
+import LoginTailwind from './pages/tailwindcsslogin'
+import CadastroTailwind from './pages/tailwindcadastro'
 
 function App() {
 
 
   return (
     <>
-      <div className="container">
+    {/* <CadastroTailwind /> */}
+      {/* <LoginTailwind /> */}
+      {/* <div className="container">
         <BrowserRouter>
           <Routes>
 
@@ -32,7 +36,27 @@ function App() {
             <Route path="*" element={<Navigate to="/login" />} />
           </Routes>
         </BrowserRouter>
-      </div>
+      </div> */}
+      <BrowserRouter>
+          <Routes>
+
+            <Route path="/" element={<LoginTailwind/>} />
+
+            <Route path="/login" element={<LoginTailwind />} />
+            <Route path="/cadastro" element={<CadastroTailwind />} />
+
+            <Route
+              path="/Home"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route path="*" element={<Navigate to="/login" />} />
+          </Routes>
+        </BrowserRouter>
     </>
   )
 }

@@ -55,8 +55,8 @@ export const atualizarTarefa = async (tarefaAtualizada) => {
     try {
         const response = await api.put("/tarefas", {
             id: tarefaAtualizada.id,
-            titulo: tarefaAtualizada.titulo,
-            descricao: tarefaAtualizada.descricao,
+            titulo: tarefaAtualizada.Titulo,
+            descricao: tarefaAtualizada.Descricao,
             dataDeEntrega: tarefaAtualizada.novaData,
             urgencia: tarefaAtualizada.urgencia,
             status: tarefaAtualizada.status
@@ -66,6 +66,7 @@ export const atualizarTarefa = async (tarefaAtualizada) => {
         return true
     } catch (error) {
         console.log(error)
+        console.log(tarefaAtualizada)
         return false
     }
 }

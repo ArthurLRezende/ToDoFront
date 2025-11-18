@@ -1,10 +1,10 @@
 
 import {useState, useEffect} from 'react'
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 import image from '../assets/image.png'
 import './login.css'
 import ToDo from './ToDo'
-import { logar } from '../helpers/data';
+import { logar } from '../helpers/data'
 
 const Login = () => {
     
@@ -44,6 +44,7 @@ const Login = () => {
                 </div>
 
             </div>
+            
         </>
     )
 }
