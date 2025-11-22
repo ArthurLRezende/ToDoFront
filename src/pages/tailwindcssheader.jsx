@@ -2,9 +2,12 @@ import { MdOutlineLogout } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { LogOut} from '../helpers/data';
 import image from '../assets/logo.png'
+
+//Componente de cabeçalho dentro da home
 const Tailwindheader = () => {
     const navigate = useNavigate();
 
+    //Func para chamar a func que remove o token e redireciona para a tela de login
     const handleLogOut = () => {
         LogOut()
         navigate('/login')

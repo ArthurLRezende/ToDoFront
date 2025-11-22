@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { atualizarTarefa, concluirTarefa, deletarTarefa } from "../helpers/data";
 
+//Componente modal para exibir e possiblitar alterações nos dados da tarefa selecionada 
 const ModalTailwind = ({ tarefa, show, onClose, refresh }) => {
 
+    //Constantes utilizadas para controle 
     const [titulo, setNovoTitulo] = useState("");
     const [descricao, setDescricao] = useState("");
     const [status, setStatus] = useState("");
     const [urgencia, setUrgencia] = useState("");
     const [novaData, setNewData] = useState("");
 
+    //Func para toda vez que a nova tarefa chegar ou uma tarefa mudar, armazenar os atributos do JSON nas constantes para que possam exibir em seus campos 
     useEffect(() => {
         if (tarefa) {
             setNovoTitulo(tarefa.Titulo || "");
@@ -19,48 +22,52 @@ const ModalTailwind = ({ tarefa, show, onClose, refresh }) => {
             setNewData(tarefa.DataPrazo || "");
         }
     }, [tarefa]);
-    
+
+    //Func para enviar os dados capturados nos campos e enviar para função de atualização de tarefas.
+    //Além disso, atualizar recarregar os demais componentes presentes na home
     const handleAtualizar = async () => {
-            const tarefaAtualizada = {
-                ...tarefa,
-                descricao,
-                status,
-                urgencia,
-                novaData
-            }
-            const response = await atualizarTarefa(tarefaAtualizada);
-            if(response){
-                refresh()
-                onClose() 
-            }else{
-                alert('Erro ao atualizar a tarefa')
-                onClose()
-            }
+        const tarefaAtualizada = {
+            ...tarefa,
+            titulo,
+            descricao,
+            novaData,
+            urgencia,
+            status
         }
-    
-        const handleConcluir = async() => {
-            const response = await concluirTarefa(tarefa.id)
-                if(response){
-                refresh()
-                onClose() 
-            }else{
-                alert('Erro ao concluir a tarefa')
-                onClose()
-            }
+        const response = await atualizarTarefa(tarefaAtualizada);
+        if (response) {
+            refresh()
+            onClose()
+        } else {
+            alert('Erro ao atualizar a tarefa')
+            onClose()
         }
-    
-        const handleDeletar = async () => {
-            const reponse = await deletarTarefa(tarefa.id)
-    
-            if(reponse){
-                refresh()
-                onClose()
-            }else{
-                alert('Erro ao deletar a tarefa')
-                onClose()
-            }
-            
+    }
+    //Func para enviar o id da tarefa que será concluida e atualizar os demais componentes presentes na home
+    const handleConcluir = async () => {
+        const response = await concluirTarefa(tarefa.id)
+        if (response) {
+            refresh()
+            onClose()
+        } else {
+            alert('Erro ao concluir a tarefa')
+            onClose()
         }
+    }
+
+    //Func para enviar o id da tarefa que será deletada e atualizar os demais componenentes presentes na home  
+    const handleDeletar = async () => {
+        const reponse = await deletarTarefa(tarefa.id)
+
+        if (reponse) {
+            refresh()
+            onClose()
+        } else {
+            alert('Erro ao deletar a tarefa')
+            onClose()
+        }
+
+    }
 
     if (!show) return null;
 
@@ -110,7 +117,7 @@ const ModalTailwind = ({ tarefa, show, onClose, refresh }) => {
 
                         <div>
                             <label className="text-sm">Urgência</label>
-                            <select name="" id="" value={urgencia}  className="bg-gray-600 w-full p-2 rounded" onChange={(e) => setUrgencia(e.target.value)}>
+                            <select name="" id="" value={urgencia} className="bg-gray-600 w-full p-2 rounded" onChange={(e) => setUrgencia(e.target.value)}>
                                 <option value="Alta">Alta</option>
                                 <option value="Media">Media</option>
                                 <option value="Baixa">Baixa</option>
@@ -119,11 +126,11 @@ const ModalTailwind = ({ tarefa, show, onClose, refresh }) => {
 
                         <div>
                             <label className="text-sm">Prazo</label>
-                            <input 
-                            type="date" 
-                            className="bg-gray-600 w-full p-2 rounded"
-                            value={novaData} 
-                            onChange={(e) => setNewData(e.target.value)} />
+                            <input
+                                type="date"
+                                className="bg-gray-600 w-full p-2 rounded"
+                                value={novaData}
+                                onChange={(e) => setNewData(e.target.value)} />
                         </div>
 
                         <div className="w-full flex justify-center place-content-between gap-8 mt-10">

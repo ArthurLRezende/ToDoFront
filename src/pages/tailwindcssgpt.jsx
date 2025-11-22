@@ -1,11 +1,14 @@
 import { useState } from "react"
 import { buscarinsight } from "../helpers/data"
 
+//Componente de insight dentro da home
 const TailwindGPT = () => {
 
+    //Constantes de controle para organizar a exibição
     const [showMessage, setShowMessage] = useState(false)
     const [message, setMessage] = useState(null)
 
+    //Metodo para controlar a função e o display das telas
     const handleInsight = async () => {
         const response = await buscarinsight()
         setMessage(response)
@@ -22,7 +25,7 @@ const TailwindGPT = () => {
                 </div>
             ) : (
                 <button onClick={handleInsight} className="w-full flex items-center justify-center rounded-2xl p-2 mx-4 bg-gray-500 font-kanit text-amber-50 active:translate-y-0.5 hover:bg-gray-600">
-                    Gerar insight
+                    Gerar insight do GPT
                 </button>
             )}
         </div>

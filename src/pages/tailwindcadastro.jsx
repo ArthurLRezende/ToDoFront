@@ -3,21 +3,26 @@ import { SlArrowLeft } from "react-icons/sl"
 import { cadastrarUsuario } from '../helpers/data'
 import { useNavigate } from 'react-router-dom'
 
+//Pagina de Cadastro
 const CadastroTailwind = () => {
     const navigate = useNavigate()
 
-    const handleCadastro = (e) => {
+    //Func que envia os dados para cadastrar o usuario e redireciona o usuario
+    const handleCadastro = async (e) => {
         e.preventDefault()
+
+
         const Nome = e.target.Nome.value
         const Email = e.target.Email.value
         const Senha = e.target.Senha.value
 
-        const resultado = cadastrarUsuario(Nome, Email, Senha)
+        const resultado = await cadastrarUsuario(Nome, Email, Senha)
 
-        if (resultado) {
+        if (resultado == true) {
             navigate('/login')
         } else {
-            alert("Erro ao cadastrar")
+            console.log(resultado)
+            alert(`Erro ao cadastrar\nCódigo do erro:${resultado}`)
         }
 
     }
@@ -60,7 +65,7 @@ const CadastroTailwind = () => {
                                 Cadastrar
                             </button>
                         </form>
-                        <a href="#" className="mt-4 text-md absolute top-0 left-2 font-bold text-gray-200 cursor-pointer" onClick={() => {navigate('/login')}}>
+                        <a href="#" className="mt-4 text-md absolute top-0 left-2 font-bold text-gray-200 cursor-pointer" onClick={() => { navigate('/login') }}>
                             <SlArrowLeft color='#ddd' />
                         </a>
                     </div>

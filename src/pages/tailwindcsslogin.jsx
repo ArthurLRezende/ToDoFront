@@ -2,9 +2,11 @@ import image from '../assets/bg.png'
 import { useNavigate } from "react-router-dom"
 import { logar } from '../helpers/data'
 
+//Pagina de login da aplicação
 const LoginTailwind = () => {
     const navigate = useNavigate();
 
+    //Func que chama a func para passar as credenciais e ser autenticado e o direcionar para a pagina home
     const handleSubmit = async (e) => {
         e.preventDefault() // Evita recarregar a página
 

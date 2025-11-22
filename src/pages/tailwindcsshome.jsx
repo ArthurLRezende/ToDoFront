@@ -10,9 +10,11 @@ import TailwindFooter from "./tailwindcssfooter"
 
 const Home = () => {
 
+    //Const para controle 
     const [tarefaSelecionada, setTarefaSelecionada] = useState(null)
     const [showModal, setShowModal] = useState(false)
 
+    //Func para gerenciar o Modal de cada tarefa
     const handleModal = (id, Titulo, Descricao, Status, Urgencia, DataPrazo) => {
 
         const tarefa = {
@@ -27,26 +29,9 @@ const Home = () => {
         setShowModal(true)
     }
 
+    //Const para controle(gatilho para o UseEffect dos componentes)
     const [refreshLista, setRefreshLista] = useState(0)
-    const [dadosGerais, setDadosGerais] = useState(null)
-
-    const carregarDados = async () => {
-        try {
-            await pegartarefas()
-            const response = await buscarInfoGerais()
-            // console.log(response)
-            setDadosGerais(response)
-        } catch (error) {
-            console.error(error)
-        }
-    }
-
-    useEffect(() => {
-        carregarDados()
-    }, [refreshLista])
-
-
-    const handleRefresh = () => setRefreshLista(prev => prev + 1)//toda vez que mudar atualiza a lista
+    const handleRefresh = () => setRefreshLista(prev => prev + 1)
 
     return (<>
         <div className="fixed top-0 w-full bg-gray-500 z-50 h-16 flex items-center px-4 shadow-lg">

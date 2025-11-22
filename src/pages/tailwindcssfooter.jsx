@@ -1,6 +1,8 @@
 import { FaRegCopyright } from "react-icons/fa"
 import { TypeAnimation } from 'react-type-animation'
 
+//Componente de rodapé dentro da home
+
 const TailwindFooter = () => {
 
   return (

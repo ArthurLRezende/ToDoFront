@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react"
 import { buscarInfoGerais } from "../helpers/data"
 import { Pie, PieChart, Tooltip, ResponsiveContainer } from 'recharts'
+
+//Componente de grafico dentro da home
 const TailwindGrafico = ({ refresh }) => {
 
+    //Const de controle
     const [dadosGerais, setDadosGerais] = useState(null)
 
+    //Func que chama outra Func para retornar as informações gerais e disponibilizá-las para serem alocadas em seus devidos elementos html
     const fetchDados = async () => {
         try {
             const response = await buscarInfoGerais()
-            console.log(response)
+            // console.log(response)
             setDadosGerais(response)
         } catch (error) {
             console.log(error)
@@ -16,12 +20,12 @@ const TailwindGrafico = ({ refresh }) => {
     }
 
 
-
+    //Func para sempre que chegar o refresh ser atualizada
     useEffect(() => {
         fetchDados()
     }, [refresh])
 
-
+    //Caso dadosGerais seja nulo exibirá esse componente
     if (!dadosGerais) return (<>
     <div className="w-full h-full flex items-center justify-center"> 
         <p className="font-kanit uppercase text-2xl justify-center text-red-600">Sem dados do servidor</p>

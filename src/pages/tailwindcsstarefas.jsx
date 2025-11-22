@@ -1,6 +1,9 @@
 import { cadastrarTarefa } from '../helpers/data'
 
+//Componente de cadastro de tarefas
 const Tailwindtarefas = ({refresh}) => {
+    
+    //Func para chamar a função de cadastro de tarefas, passar seus parametros, e atualizar o componente de lista 
        const handleCadastroTarefa = async (e) => {
             e.preventDefault()
             const Titulo = e.target.Titulo.value

@@ -2,24 +2,25 @@ import { IoOptions } from "react-icons/io5";
 import { useState, useEffect } from "react"
 import { pegartarefas } from "../helpers/data";
 
+//Componente de lista dentro da home
 const TailwindLista = ({ handleModal, refresh }) => {
 
+    //Constantes de controle
     const [tarefas, setTarefas] = useState(null)
-    const [loading, setLoading] = useState(true)
 
-
+    //Func que chama a funcão 
     const fetchDados = async () => {
         try {
             const response = await pegartarefas()
-            console.log(response)
+            // console.log(response)
             if (response) setTarefas(response)
-        } finally {
-            setLoading(false)
+        } catch(error) {
+            console.log(error)
         }
     }
-
+    
+    //Func para toda vez que refresh for alterado recarrega os dados neste componente
     useEffect(() => {
-        console.log("Atualizando lista de tarefas...");
         fetchDados()
     }, [refresh])
 
@@ -66,7 +67,7 @@ const TailwindLista = ({ handleModal, refresh }) => {
                                 </td>
                                 <td className="py-1 px-4 w-1/6 overflow-hidden text-ellipsis text-center text-xs md:text-base">{tarefa.diasRestantes}</td>
                                 <td className="py-4 px-8 w-1/6 overflow-hidden text-ellipsis text-end text-xs md:text-base"><button className="cursor-pointer text-gray-200"
-                                    onClick={() => { handleModal(tarefa.id, tarefa.titulo, tarefa.status, tarefa.descricao, tarefa.urgencia, tarefa.dataPrazo) }}>
+                                    onClick={() => { handleModal(tarefa.id, tarefa.titulo, tarefa.descricao, tarefa.status, tarefa.urgencia, tarefa.dataPrazo) }}>
                                     <IoOptions size={20} className="cursor-pointer text-gray-200" />
                                 </button></td>
                             </tr>
